@@ -1,0 +1,23 @@
+//Задача 3: Задайте произвольный массив. Выведете его элементы, начиная с конца. Использовать рекурсию, не использовать циклы.
+
+Random rng = new Random();
+
+int[] arr = new int[rng.Next(5,6)];
+
+for(int i=0; i<arr.Length; i++)
+{
+    arr[i] = rng.Next(0,10);
+    Console.Write(arr[i]);
+}
+Console.WriteLine();
+
+RecursiveReversePrint(arr, arr.Length);
+
+void RecursiveReversePrint(int[] arr, int pos)
+{
+    if(pos != 0)
+    {
+        Console.Write(arr[pos-1]);
+        RecursiveReversePrint(arr, pos - 1);
+    }
+}
